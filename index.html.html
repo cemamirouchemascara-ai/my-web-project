@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>موقعي المتطور</title>
+    <style>
+        body { 
+            background-color: #1a1a1a; 
+            color: white; 
+            font-family: sans-serif; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            margin: 0; 
+        }
+
+        /* تنسيق صندوق تسجيل الدخول */
+        #login-section {
+            background: #262626; 
+            padding: 40px; 
+            border-radius: 15px; 
+            box-shadow: 0 10px 25px rgba(255, 69, 0, 0.3); 
+            text-align: center; 
+            width: 350px; 
+            border-top: 5px solid #ff4500;
+        }
+
+        /* تنسيق قسم الصورة (مخفي في البداية) */
+        #welcome-section {
+            display: none; /* هذا السطر هو اللي يخفي الصورة في البداية */
+            text-align: center;
+        }
+
+        h2, h1 { color: #ff4500; }
+        .promo-text { color: #ffcc00; margin-bottom: 25px; font-weight: bold; }
+        
+        input { 
+            width: 100%; padding: 12px; margin: 10px 0; 
+            border-radius: 8px; border: 1px solid #444; 
+            background: #333; color: white; box-sizing: border-box; 
+        }
+
+        button { 
+            width: 100%; padding: 12px; background-color: #ff4500; 
+            border: none; color: white; font-weight: bold; 
+            border-radius: 8px; cursor: pointer; transition: 0.3s; 
+        }
+
+        .user-image { 
+            border: 5px solid #ff4500; border-radius: 20px; 
+            max-width: 400px; box-shadow: 0 0 25px rgba(255, 69, 0, 0.7); 
+        }
+    </style>
+</head>
+<body>
+
+    <div id="login-section">
+        <h2>تسجيل الدخول</h2>
+        <p class="promo-text">سجل ولن تندم</p>
+        <form id="loginForm">
+            <input type="text" placeholder="اسم المستخدم" required>
+            <input type="password" placeholder="كلمة السر" required>
+            <button type="submit">دخول</button>
+        </form>
+    </div>
+
+    <div id="welcome-section">
+        <h1>أهلاً بك يا بطل! لقد نجحت</h1>
+        <img src="https://scontent-atl3-3.xx.fbcdn.net/v/t1.15752-9/663047899_942902465189090_641049263542761778_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=109&ccb=1-7&_nc_sid=9f807c&_nc_ohc=FLY_8FfaLoAQ7kNvwFkYBzl&_nc_oc=AdqHIaZUasiz0mPgZej7_BLVGWGPdpz1a6llfS8XPh0yFRJEPIpZpNeg8YQNgplxMzD8ZrywypciIw5fmFMh9tbl&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-atl3-3.xx&_nc_ss=7a32e&oh=03_Q7cD5AEKf7JPIdpJh_rLrRsE_LG5zBBvYaojKVHm5jz9jkzFUw&oe=69FE1223" class="user-image">
+    </div>
+
+    <script>
+        document.getElementById('loginForm').onsubmit = function(e) {
+            e.preventDefault(); // منع الصفحة من التحديث
+            
+            // 1. إخفاء صندوق تسجيل الدخول
+            document.getElementById('login-section').style.display = 'none';
+            
+            // 2. إظهار قسم الصورة والترحيب
+            document.getElementById('welcome-section').style.display = 'block';
+        };
+    </script>
+
+</body>
+</html>
